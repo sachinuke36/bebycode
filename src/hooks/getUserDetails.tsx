@@ -7,7 +7,7 @@ const getUserDetails = () => {
     const {user, selectedUser, setAllUsers } = useAuth();
     if(!user) return null;
 
-    const getUsers = async ():Promise<any> => {
+    const getUsers = async () => {
           const querySnapShot = await getDocs(collection(db, "students"));
           const allUsers = querySnapShot.docs.map((doc) => ({
             id: doc.id,
